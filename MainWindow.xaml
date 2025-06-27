@@ -1,0 +1,54 @@
+﻿<Window x:Class="CyberSecurityAwarenessBotGUI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Cybersecurity Awareness Bot" Height="600" Width="800">
+      
+    
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2.5*"/>
+            <ColumnDefinition Width="1.5*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="150"/>
+        </Grid.RowDefinitions>
+
+        <!-- Chat Area -->
+        <GroupBox Header="Chatbot" Grid.Column="0" Grid.Row="0" Margin="5">
+            <DockPanel>
+                <ListBox Name="ChatHistory" Margin="5" />
+                <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" Margin="5">
+                    <TextBox Name="ChatInput" Width="400" Margin="5"/>
+                    <Button Name="SendChat" Content="Send" Click="SendChat_Click" Margin="5"/>
+                </StackPanel>
+            </DockPanel>
+        </GroupBox>
+
+        <!-- Task Assistant -->
+        <GroupBox Header="Task Assistant" Grid.Column="1" Grid.Row="0" Margin="5">
+            <StackPanel>
+                <TextBox Name="TaskInput" Height="30" Margin="5"/>
+                <Button Name="AddTask" Content="Add Task" Click="AddTask_Click" Margin="5"/>
+                <ListBox Name="TaskList" Margin="5" />
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Quiz Section -->
+        <GroupBox Header="Cybersecurity Quiz" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="5">
+            <StackPanel>
+                <TextBlock Name="QuizQuestion" Text="Click Start to begin the quiz." Margin="5" FontWeight="Bold"/>
+                <StackPanel Name="QuizOptions" Margin="5"/>
+                <Button Name="StartQuiz" Content="Start Quiz" Click="StartQuiz_Click" Margin="5" Width="100"/>
+                <Button Name="SubmitAnswer" Content="Submit Answer" Click="SubmitAnswer_Click" Margin="5" Width="120"/>
+                <TextBlock Name="QuizFeedback" Margin="5" Foreground="DarkGreen"/>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- Activity Log -->
+        <GroupBox Header="Activity Log" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" Margin="5">
+            <ListBox Name="ActivityLog" Margin="5"/>
+        </GroupBox>
+    </Grid>
+</Window>
